@@ -1,0 +1,86 @@
+#nav-container{
+  height: 50px;
+  width: 100vw;
+  background-color: rgba(2, 92, 209, 0.87);
+  color:white;
+  display: flex;
+  align-items: center;
+  padding:0;
+  font-family: Monserrat, sans-serif;
+  font-weight: 500;
+  margin-bottom: 20px;
+  position:fixed;
+  z-index: 3000;
+}
+
+#nav-menu{
+height: fit-content;
+margin-right: 10px;
+}
+
+#nav-menu-image{
+  height:20px;
+  transform:translateY(2px);
+  cursor:pointer;
+  margin-left:18px;
+}
+
+#nav-log{
+  right:0;
+}
+
+#nav-log-image{
+  height:20px;
+  position: absolute;
+  top:15px;
+  right:25px;
+  cursor:pointer;
+  margin-right: 18px;
+}
+
+#nav-side-menu{
+  min-width: 200px;
+  position: absolute;
+  top: 50px;
+  width: fit-content;
+  padding:5px 0;
+  background-color: rgba(2, 92, 209, 0.87);
+  font-family:Montserrat;
+  font-weight:400;
+  height: calc(100vh - 50px);
+  z-index: 2000;
+  animation-name: nav-animation;
+  animation-duration: 0.5s;
+  visibility: hidden;
+}
+
+.nav-menu-option{
+  height: 50px;
+  width: 100%;
+  margin: 20px auto;
+  color:rgb(255, 255, 255);
+  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.nav-menu-option:hover{
+  background-color: rgba(240, 248, 255, 0.267);
+}
+
+.nav-menu-close{
+  cursor:pointer;
+  position: absolute;
+  bottom: 0px;
+}
+
+@keyframes nav-animation{
+  0%{
+    transform: translateX(-170px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}

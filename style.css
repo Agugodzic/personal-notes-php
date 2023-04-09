@@ -1,0 +1,17 @@
+html{
+  background-color: white;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/004/750/613/original/flat-design-abstract-background-soft-liquid-shapes-template-with-modern-gradient-background-colors-cool-aesthetic-background-design-suitable-for-social-media-post-mobile-app-banner-web-ads-free-vector.jpg");
+  background-size:cover;
+}
+body{
+  margin:0;
+  padding:0;
+}
+
+a{
+  text-decoration:none;
+  cursor:pointer;
+}
+button{
+  cursor:pointer;
+}

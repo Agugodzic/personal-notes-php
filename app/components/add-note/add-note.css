@@ -1,0 +1,101 @@
+input[type="radio"] {
+  appearance: none;
+  background-color: Inherited;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 27px;
+  height: 27px;
+  border-style:none;
+  border-radius: 50%;
+  cursor:pointer;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.274);
+}
+
+input[type="radio"]:checked {
+  width: 25px;
+  height: 25px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.322);
+}
+
+#add-note-container{
+  height: 100vh;
+  width: 100vw;
+  position:fixed;
+  z-index:5000;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.363);
+  background-color: rgba(0, 0, 0, 0.199);
+}
+
+#add-note{
+  min-height: 78vh;
+  height: fit-content;
+  width:550px;
+  background-color: rgb(252, 255, 61);
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.24);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+#add-note-textarea{
+  min-height: 70vh;
+  min-width:500px;
+  max-height: 80vh;
+  width:500px;
+  border-style: none;
+  border-color:aliceblue;
+  color:rgba(0, 0, 0, 0.911);
+  background-color: rgba(255, 235, 205, 0);
+  font-size: 20px;
+  padding:20px;
+  outline: none;
+}
+
+#add-note-save-buton{
+  padding:7px 14px;
+  border-radius: 10px;
+  background-color: rgba(2, 92, 209, 0.87);
+  box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.24);
+  border-style: none;
+  margin-top:20px;
+  font-size: 16px;
+}
+
+#add-note-set-color{
+  margin-top:10px;
+}
+
+.add-note-color-input{
+  font-family: system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.1;
+  margin:5px;
+  padding:0px;
+}
+
+.add-note-color-input,
+.add-note-color-input:before,
+.add-note-color-input:after {
+  box-sizing: border-box;
+}
+
+.red{
+  background-color: #fca4a4;
+}
+
+.green{
+  background-color: #b2ff96;
+} 
+
+.blue{
+  background-color: hsl(205, 100%, 78%);
+}
+
+.yellow{
+  background-color: #f5ff6c;
+}
