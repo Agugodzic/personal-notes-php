@@ -1,8 +1,7 @@
 <div id=app-container>
 <?php 
-  include 'app/app.module.php';
-  include 'app/components/nav/nav.php';
-  include 'app/components/board/board.php';
+  include 'app/nav/nav.php';
+  include 'app/board/board.temp.php';
   
   // appView();
 ?>

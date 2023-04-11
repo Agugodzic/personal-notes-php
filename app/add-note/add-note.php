@@ -10,6 +10,7 @@
     <label class="add-note-color-input" onclick = "changeColor('#ff8787')"><input type="radio" class="red" value="red" name="color"></label>
   </div>
   <button id="add-note-save-buton" type="submit">Guardar</button>
+  <button id="add-note-close-buton"> Cerrar</button>
 </form>
 </div>
 

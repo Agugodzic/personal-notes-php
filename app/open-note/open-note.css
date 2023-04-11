@@ -18,7 +18,7 @@ input[type="radio"]:checked {
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.322);
 }
 
-#add-note-container{
+#open-note-container{
   height: 100vh;
   width: 100vw;
   position:fixed;
@@ -27,10 +27,12 @@ input[type="radio"]:checked {
   align-items: center;
   justify-content: center;
   box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.363);
-  background-color: rgba(0, 0, 0, 0.199);
+  background-color: rgba(0, 0, 0, 0.308);
+  /*backdrop-filter: blur(10px);*/
+  /*backdrop-filter: saturate(80%);*/
 }
 
-#add-note{
+#open-note{
   min-height: 78vh;
   height: fit-content;
   width:550px;
@@ -41,7 +43,7 @@ input[type="radio"]:checked {
   align-items: center;
   justify-content: center;
 }
-#add-note-textarea{
+#open-note-textarea{
   min-height: 70vh;
   min-width:500px;
   max-height: 80vh;
@@ -55,21 +57,36 @@ input[type="radio"]:checked {
   outline: none;
 }
 
-#add-note-save-buton{
+#open-note-save-buton{
   padding:7px 14px;
   border-radius: 10px;
-  background-color: rgba(2, 92, 209, 0.87);
+  background-color: rgba(2, 92, 209, 0.911);
   box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.24);
   border-style: none;
+  margin:10px;
   margin-top:20px;
   font-size: 16px;
+  min-width: 100px;
 }
 
-#add-note-set-color{
+#open-note-close-buton{
+  padding:7px 14px;
+  border-radius: 10px;
+  background-color: rgba(233, 233, 233, 0.87);
+  color:rgb(17, 17, 17);
+  box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.24);
+  border-style: none;
+  margin:10px;
+  margin-top:20px;
+  font-size: 16px;
+  min-width: 100px;
+}
+
+#open-note-set-color{
   margin-top:10px;
 }
 
-.add-note-color-input{
+.open-note-color-input{
   font-family: system-ui, sans-serif;
   font-size: 2rem;
   font-weight: bold;
@@ -78,24 +95,21 @@ input[type="radio"]:checked {
   padding:0px;
 }
 
-.add-note-color-input,
-.add-note-color-input:before,
-.add-note-color-input:after {
+.open-note-color-input,
+.open-note-color-input:before,
+.open-note-color-input:after {
   box-sizing: border-box;
 }
 
 .red{
   background-color: #fca4a4;
 }
-
 .green{
   background-color: #b2ff96;
 } 
-
 .blue{
-  background-color: hsl(205, 100%, 78%);
+  background-color: #A9D5EF;
 }
-
 .yellow{
   background-color: #f5ff6c;
 }

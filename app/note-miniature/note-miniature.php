@@ -1,7 +1,7 @@
 <?php 
   $noteStyle;
 
-  function note($id,$text,$color){
+  function noteMiniatureTemplate($id,$text,$color){
     global $noteStyle;
 
     switch($color){

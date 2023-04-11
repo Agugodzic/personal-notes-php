@@ -29,11 +29,11 @@
   transform: rotate(0.5);
 }
 .blue-note{
-  background-color:#B0EFA9;
+  background-color:#A9D5EF;
   transform: rotate(-1deg);
 }
 .green-note{
-  background-color:#A9D5EF;
+  background-color:#B0EFA9;
   transform: rotate(1deg);
 }
 .yellow-note{

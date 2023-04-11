@@ -18,8 +18,6 @@
   <title>Personal Notes</title>
 </head>
 <body>
-  
 <?php injectedModule('view')?>
-
 </body>
 </html>

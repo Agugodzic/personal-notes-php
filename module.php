@@ -12,19 +12,19 @@
   ['/',
     'app/app.php',[
       'app/app.css',
-      'app/components/nav/nav.css',
-      'app/components/note/note.css',
-      'app/components/board/board.css',
-      'app/components/add-note/add-note.css',
+      'app/nav/nav.css',
+      'app/note-miniature/note-miniature.css',
+      'app/board/board.css',
     ]
   ],
   ['/board',
     'app/app.php',[
       'app/app.css',
-      'app/components/nav/nav.css',
-      'app/components/note/note.css',
-      'app/components/board/board.css',
-      'app/components/add-note/add-note.css'
+      'app/nav/nav.css',
+      'app/note-miniature/note-miniature.css',
+      'app/board/board.css',
+      'app/add-note/add-note.css',
+      'app/open-note/open-note.css'
     ]
   ],
   ['/login',
@@ -66,9 +66,9 @@
           }
         }
         break;
-        case 'view':
-          routerView();
-          break;
+      case 'view':
+        routerView();
+        break;
     };
   };
   ?>
