@@ -30,9 +30,17 @@
   ['/login',
     'app/app.php',[
       'app/app.css',
-      'app/login/login.css'
+      'app/login/login.css',
+      'app/TEST/TEST.css'
       ]
   ],
+  ['/test',
+  'app/TEST/TEST.php',[
+    'app/app.css',
+    'app/nav/nav.css',
+    'app/TEST/TEST.css'
+  ]
+]
 ];
 
   function routerView(){

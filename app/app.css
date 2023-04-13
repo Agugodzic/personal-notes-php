@@ -2,3 +2,29 @@
  background-color: rgba(255, 255, 255, 0.658);
  /*background-color: rgba(0, 0, 0, 0.925);*/
 }
+
+.button1{
+  padding:7px 14px;
+  border-radius: 10px;
+  background-color: rgba(233, 233, 233, 0.925);
+  color:rgb(17, 17, 17);
+  box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.24);
+  border-style: none;
+  margin:10px;
+  margin-top:20px;
+  font-size: 16px;
+  min-width: 100px;
+  backdrop-filter: blur(2px);
+}
+
+.button2{
+  min-width: 100px;
+  padding:7px 14px;
+  border-radius: 10px;
+  background-color: rgba(2, 92, 209, 0.87);
+  box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.24);
+  border-style: none;
+  margin-top:20px;
+  font-size: 16px;
+  backdrop-filter: blur(1px);
+}
