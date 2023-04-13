@@ -17,9 +17,12 @@ use noteEntity\Note;
   <div id="test-result">
    
   <?php 
+  
+    $notes = getUserNotes(8); #note.service.php
+    foreach($notes as $note){
+      echo '<p style="color:black">'.$note->text.'</p>';
+    }
 
-    $note1 = new Note(5,8,"'hola che'","'blue'");
-    addNote($note1);
 
   ?>
 

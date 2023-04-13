@@ -71,7 +71,7 @@
 
     $sql = "UPDATE ".$tableName." SET ('".$updates."') WHERE ". $condition;
     
-    return pg_query($connection,$sql);
+    return pg_query(db_connect(),$sql);
   };
 
   function db_getColumnsWhere($table,$columns,$condition){
@@ -91,16 +91,16 @@
     };
 
     $sql = "SELECT (".$columns_sql.") FROM ". $tableName ." WHERE ". $condition;
-    return pg_query($connection,$sql);
+    return pg_query(db_connect(),$sql);
   };
 
-  function db_deleteWhere($table,$condition){
+  function db_deleteWhere($tableName,$condition){
     $sql = "DELETE FROM ". $tableName ." WHERE ". $condition ;
-    return pg_query($connection,$sql);
+    return pg_query(db_connect(),$sql);
   };
 
-  function db_getWhere($table,$condition){
+  function db_getWhere($tableName,$condition){
     $sql = "SELECT * FROM ". $tableName ." WHERE ". $condition;
-    return pg_query($connection,$sql);
+    return pg_query(db_connect(),$sql);
   };
 

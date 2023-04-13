@@ -1,14 +1,15 @@
 <?php
   require_once('app/.data/dbFunctions.php');
+  require_once('app/.data/data-services/note.service.php'); 
+  use noteEntity\Note;
 
  // db_connect(); #dbFunctions.php
   
   function addNote($note){
     $values = [ 
-      'noteid' => ($note -> userid),
       'userid' => ($note -> userid),
-      'notetext' => ($note -> text),
-      'notecolor' => ($note -> color)
+      'text' => ($note -> text),
+      'color' => ($note -> color)
     ];
     return db_insert('notes', $values); #dbFunctions.php
   };
@@ -26,7 +27,13 @@
   };
 
   function getUserNotes($userid){
-    return db_getWhere('notes', "userid = ". $userid); #dbFunctions.php
+    $queryResp = db_getWhere('notes', "userid = ". $userid); #dbFunctions.php
+    $noteList = [];
+
+    while($obj = pg_fetch_object($queryResp)){
+      $noteList[] = new Note($obj->noteid,$obj->userid,$obj->text,$obj->color);
+    };
+    return $noteList;
   };
 
   function getNoteById($noteid){

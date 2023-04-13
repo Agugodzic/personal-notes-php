@@ -8,11 +8,11 @@ class Note{
   public $color;
   public $text;
 
-  function __construct($noteid,$userid,$color,$text){
-    $this->noteid = $noteid;
+  function __construct($noteid,$userid,$text,$color){
+    $noteid = $this->noteid;
     $this->userid=$userid;
-    $this->color=$color;
     $this->text=$text;
+    $this->color=$color;
   }
 }
 
