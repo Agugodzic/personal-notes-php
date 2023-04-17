@@ -1,24 +1,6 @@
 <?php
 include 'app/note-miniature/note-miniature.php';
 include 'board.functions.php';
-require_once('app/.data/data-services/note.service.php'); 
-require_once('app/.data/entities/note.entity.php'); 
-use noteEntity\Note;
-
-  if($addNote){
-    include 'app/add-note/add-note.php';
-  };
-  if($openNote){
-    include 'app/open-note/open-note.php';
-  };
-  if($addData){
-    $color="'".$_GET["color"]."'";
-    $text="'".$_GET["text"]."'";
-    $userid = 8;
-    $note = new Note(null,$userid,$text,$color);
-    addNote($note); #note.service.php
-  };
-
 ?>
 
 <div id="board-container">

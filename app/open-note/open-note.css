@@ -1,3 +1,4 @@
+
 input[type="radio"] {
   appearance: none;
   background-color: Inherited;
@@ -33,7 +34,7 @@ input[type="radio"]:checked {
 }
 
 #open-note{
-  min-height: 78vh;
+  min-height: 75vh;
   height: fit-content;
   width:550px;
   background-color: rgb(252, 255, 61);
@@ -112,4 +113,25 @@ input[type="radio"]:checked {
 }
 .yellow{
   background-color: #f5ff6c;
+}
+#open-note-delete-button{
+  background-color: rgba(148, 40, 40, 0);
+  border-style:none;
+  height:40px;
+  width:40px;
+  margin-bottom: 85px;
+  padding:0;
+  margin-left: 10px;
+}
+
+#open-note-delete-img{
+  opacity: 60%;
+  height:35px;
+  position:absolute;
+  transition:0.18s;
+  transform:translate(-17px, -17px);
+}
+#open-note-delete-img:hover{
+  opacity: 87%;
+  height:45px;
 }

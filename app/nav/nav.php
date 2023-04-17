@@ -1,11 +1,11 @@
 
 <div id="nav-container">
   <div id="nav-menu" onclick="openMenu()" >
-    <img id="nav-menu-image" class="menu-open" src="https://i.postimg.cc/Lsh51J7x/menu.png">
+    <img id="nav-menu-image" class="menu-open" src="https://cdn-icons-png.flaticon.com/512/55/55003.png">
   </div>
   <div id="nav-logo">Personal Notes</div>
   <div id="nav-log">
-    <img id="nav-log-image" src="https://i.postimg.cc/j2VkfkxZ/Png-Item-2560255.png">
+    <img id="nav-log-image" src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png">
   </div>
 
 

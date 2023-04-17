@@ -38,6 +38,6 @@
 
   function getNoteById($noteid){
     return db_getWhere('notes', "noteid  = ". $noteid); #dbFunctions.php
-  }
+  };
 
   ?>
