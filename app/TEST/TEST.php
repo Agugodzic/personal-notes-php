@@ -21,7 +21,17 @@ use noteEntity\Note;
     $notes = getUserNotes(8); #note.service.php
     foreach($notes as $note){
       echo '<p style="color:black">'.$note->text.'</p>';
-    }
+    };
+
+    function route_uri($level){
+      function route_uriArray(){
+        $uri = 'hola/comoandas/555?variable';
+        $cleanUri = explode('?',$uri)[0]; 
+        $uri = explode('/',$cleanUri)[0]; 
+        echo 'uri: '.$uri;
+      };
+    };
+    route_uri(0);
 
 
   ?>

@@ -14,8 +14,8 @@
       );
     return $connection;
 */
-        
-    $connection = pg_connect(
+
+  $connection = pg_connect(
       "host=".$DB_HOST." ".
       "dbname=".$DB_TABLE." ".
       "user=".$DB_USERNAME." ".
@@ -68,8 +68,7 @@
       };
       $count += 1;
     };
-
-    $sql = "UPDATE ".$tableName." SET ('".$updates."') WHERE ". $condition;
+    $sql = "UPDATE ".$tableName." SET ".$updates." WHERE ". $condition;
     
     return pg_query(db_connect(),$sql);
   };
@@ -91,7 +90,7 @@
     };
 
     $sql = "SELECT (".$columns_sql.") FROM ". $tableName ." WHERE ". $condition;
-    return pg_query(db_connect(),$sql);
+    return pg_query(db_connect(),$sql);/*6347724 */
   };
 
   function db_deleteWhere($tableName,$condition){

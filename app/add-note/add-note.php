@@ -1,6 +1,5 @@
 <div id="add-note-container">
   <form submit="changeColor('blue')">
-    <input type="number" style="visibility:hidden" name="id"></input>
     <div id="add-note">
       <textarea id="add-note-textarea" name="text"></textarea>
     </div>

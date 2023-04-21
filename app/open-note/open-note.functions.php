@@ -12,7 +12,7 @@ $openNoteId = 0;
     $openNoteColor = $_GET['color'];
   };
   if(isset($_GET['id'])){
-    $id = $_GET['id'];
+    $openNoteId = $_GET['id'];
   };
 
   function delete(){

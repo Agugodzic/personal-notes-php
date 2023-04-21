@@ -2,9 +2,9 @@
 
 <div id="open-note-container">
   <form name="noteform">
-    <input type="number" style="visibility:hidden" name="id"></input>
+    <input type="number" value = '<?= $openNoteId?>' style="visibility:hidden" name="id"></input>
     <div id="open-note">
-      <textarea id="open-note-textarea" name="text" value=<= $openNoteText ?><?= $openNoteText ?></textarea>
+      <textarea id="open-note-textarea" name="text"><?= $openNoteText ?></textarea>
     </div>
     <div id="open-note-set-color">
       <label class="open-note-color-input" onclick = "changeColor('#f3ff45')"><input type="radio" class="yellow" value="yellow" name="color"></label>
@@ -15,14 +15,20 @@
     <button id="add-note-save-buton" type="submit">Guardar</button>
     <button id="add-note-close-buton" type="reset" onclick="back()"> Cerrar</button>
   </form>
-  <button id="open-note-delete-button" onclick="'<?php delete()?>'"><img src="https://cdn-icons-png.flaticon.com/512/3687/3687412.png" id="open-note-delete-img"></button>
+  <form name="deleteform" id="open-note-delete-form">
+    <input type="number" value = '<?= $openNoteId?>' style="visibility:hidden" name="id"></input>
+    <input type="text" value="delete" name ="action" style="visibility:hidden"></input>
+    <button id="open-note-delete-button"><img src="https://cdn-icons-png.flaticon.com/512/3687/3687412.png" id="open-note-delete-img"></button>
+  </form>
 </div>
 
 <script>
-  var formElements = document.forms.noteform.elements;
-  const color = '<?php echo $openNoteColor?>';
+  var noteFormElements = document.forms.noteform.elements;
+  const color = '<?= $openNoteColor?>';
+
   initColor(color);
-  formElements.id.value = '<?php echo $openNoteId?>';
+  noteFormElements.id.value = '<?php echo $openNoteId?>';
+
 
   function back(){
     location.href="/board";
@@ -35,7 +41,7 @@
 
   function initColor(color){
     var noteColor = document.getElementById("open-note");
-    formElements.color.value='<?php echo $openNoteColor?>';
+    noteFormElements.color.value='<?php echo $openNoteColor?>';
     
     switch(color){
       case "yellow":

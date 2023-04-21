@@ -22,8 +22,14 @@
     return db_deleteWhere('notes',"userid = ". $userId); #dbFunctions.php
   };
 
-  function editNote($noteid,$valuesList){
-    return db_updateWhere('notes', $valuesList, "noteid = ". $noteId); #dbFunctions.php
+  function editNote($note){
+    $values = [ 
+      'noteid' => ($note -> noteid),
+      'userid' => ($note -> userid),
+      'text' => ($note -> text),
+      'color' => ($note -> color)
+    ];
+    return db_updateWhere('notes', $values, "noteid = ". ($note -> noteid)); #dbFunctions.php
   };
 
   function getUserNotes($userid){

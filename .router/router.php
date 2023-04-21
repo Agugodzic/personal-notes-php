@@ -34,9 +34,9 @@ class Router{
     $route = $view[0];
     $component = $view[1];
 
-    self::$routes['GET'][$route]['function'] = $callback;
-    self::$routes['GET'][$route]['component'] = $component;
-    self::$routes['GET'][$route]['uri'] = $route;
+    self::$routes['POST'][$route]['function'] = $callback;
+    self::$routes['POST'][$route]['component'] = $component;
+    self::$routes['POST'][$route]['uri'] = $route;
   }
 
   public static function dispatch(){
