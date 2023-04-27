@@ -1,8 +1,7 @@
 <div id=app-container>
 <?php 
-  include 'app/nav/nav.php';
+ /* require_once('app/app.module.php');
+  appInjected('view');*/
   include 'app/board/board.temp.php';
-  
-  // appView();
 ?>
 </div>

@@ -1,6 +1,8 @@
 <?php
 namespace router;
 
+require_once('router.functions.php');
+
 class Router{
   private static $routes = [
     /*
@@ -10,11 +12,10 @@ class Router{
           'component' => 'routeComponent1'
           'uri' => 'uri1'
         ], ...
-      ]
       'POST'  => [
         'route1' => [
           'function' => function1(){....},
-          'route' => 'route',
+          'route' => 'routeComponent1',
           'uri' => 'uri1'
           ], ...
       ]
@@ -39,9 +40,8 @@ class Router{
     self::$routes['POST'][$route]['uri'] = $route;
   }
 
-  public static function dispatch(){
-    $uri = $_SERVER['REQUEST_URI'];
-    $cleanUri = explode('?',$uri)[0]; 
+  public static function dispatch($level){
+    $cleanUri = route_uriForLevel($level); #router.functions.php
     $method = $_SERVER['REQUEST_METHOD'];
 
     foreach(self::$routes[$method] as $route){
@@ -52,6 +52,7 @@ class Router{
         return;
       }
     };
+    
     include '.error-pages/404-error.php';
   }
 }
