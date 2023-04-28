@@ -70,7 +70,7 @@ span{
   position:relative;
   text-align:left;
 }
-button{
+.login-button{
   color:black;
   font-size: 18px;
   height:35px;

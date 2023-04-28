@@ -1,8 +1,9 @@
 <?php 
   require_once('.router/router.php');
   require_once('.router/router.functions.php');
-
   use router\Router;
+
+  session_start();
 
   $globalStyles = [
     'style.css',
@@ -25,14 +26,16 @@
         'app/note-miniature/note-miniature.css',
         'app/board/board.css',
         'app/add-note/add-note.css',
-        'app/open-note/open-note.css'
+        'app/open-note/open-note.css',
+        'app/notification/notification.css'
       ]
     ],
     ['/login',
       'app/login/login.php',[
         'app/app.css',
         'app/login/login.css',
-        'app/TEST/TEST.css'
+        'app/TEST/TEST.css',
+        'app/notification/notification.css'
         ]
     ],
     ['/register',
@@ -79,5 +82,7 @@
         routerView();
         break;
     };
+
+   
   };
 ?>

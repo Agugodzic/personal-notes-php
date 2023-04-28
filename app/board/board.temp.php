@@ -2,6 +2,8 @@
 include 'app/note-miniature/note-miniature.php';
 include 'board.functions.php';
 include 'app/nav/nav.php';
+require_once('app/notification/notification.php');
+
 ?>
 
 <div id="board-container">

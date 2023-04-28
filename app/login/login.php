@@ -9,9 +9,9 @@
         <input name="user" value="<?= $user ?>" type="text"></input>
         <span>Contraseña:</span> 
         <input name="password" type="password"></input>
-        <button id="login-form-button" value="iniciar sesion" name="submit">Ingresar</button>
+        <button class="login-button" id="login-form-button" value="iniciar sesion" name="submit">Ingresar</button>
       </form>
-      <button id="login-form-button-register" onclick="location.href='/register'">Registrarse</button>
+      <button class="login-button" id="login-form-button-register" onclick="location.href='/register'">Registrarse</button>
       <?php showMsj() ?>
     </div>
     <div id="login-info">

@@ -55,6 +55,10 @@
   };
 
   function cerrarSesion(){
+    <?php 
+      $_SESSION = array();
+      session_destroy();
+      ?>
     window.location.href="/login"
   }
  

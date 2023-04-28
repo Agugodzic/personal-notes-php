@@ -1,5 +1,4 @@
 <?php
-
 namespace noteEntity;
 
 class Note{
@@ -9,10 +8,10 @@ class Note{
   public $text;
 
   function __construct($noteid,$userid,$text,$color){
-    $this->noteid =  $noteid;
-    $this->userid=$userid;
-    $this->text=$text;
-    $this->color=$color;
+    $this->noteid = $noteid;
+    $this->userid = $userid;
+    $this->text = $text;
+    $this->color = $color;
   }
 }
 

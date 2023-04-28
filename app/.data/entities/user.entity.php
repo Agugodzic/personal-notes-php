@@ -1,13 +1,15 @@
 <?php
+namespace userEntity;
 
 class User{
-  $userid;
-  $username;
-  $email
-  $password;
-  $theme;
+  public $userid;
+  public $username;
+  public $email;
+  public $password;
+  public $theme;
 
-  function __construct($username, $email, $password, $theme){
+  function __construct($userid,$username,$email,$password,$theme){
+    $this->userid = $userid;
     $this->username = $username;
     $this->email = $email;
     $this->password = $password;

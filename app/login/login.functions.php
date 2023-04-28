@@ -1,4 +1,9 @@
 <?php
+require_once('app/notification/notification.php');
+require_once("app\.data\data-services\user.service.php");
+require_once('app/.data/entities/user.entity.php');
+use userEntity\User;
+
 $user = "";
 
 function showMsj(){
@@ -20,14 +25,47 @@ function showMsj(){
       <p class="login-msj-text">ingresa un nombre de usuario</p>
     </div>
     ';
+  }
+};
+
+if(!empty($_GET['submit']) && !empty($_GET['user']) && !empty($_GET['password'])){
+  $user = $_GET['user'];
+  $password = $_GET['password'];
+  $userData = getUser($user,$password);
+  $userId;
+  
+  while($obj = pg_fetch_object($userData)){
+    $users[] = new User($obj->userid,$obj,$obj->email,$obj->password,$obj->theme);
+    $userId = $obj->userid;
+  };
+  
+  if(empty($userId)){
+    echo '
+    <p class="login-msj-text">Usuario o contraseña incorrectos</p>
+    <script>window.location.href ="login?notification=0";</script>
+    ';
   }else{
-    if($_GET['user'] == 'agugo' && $_GET['password'] == '123123'){
-      echo '<script>location.href="/board"</script>';
-    }
+    echo '
+    <script>
+      window.location.href="/board";
+    </script>
+   ';
+   $_SESSION['user_id'] = $userId;
+   echo '
+   <script>
+    // alert("'.$_SESSION['user_id'].'");
+   </script>
+  ';
+ };
+};
+
+if(isset($_GET['notification'])){
+  if($_GET['notification']=1){
+    notification('Usuario o contraseña incorrectos','Ok');
+  }else if($_GET['notification']=0){
+    notification('Usuario registrado correctamente','Ok');
   };
 };
 
-if(isset($_GET['user'])){
-  $user = $_GET['user'];
-}
+
 ?>

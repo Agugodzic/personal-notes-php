@@ -5,6 +5,11 @@ use noteEntity\Note;
 
 $addNote = isset($_GET['add-note']);
 $openNote = isset($_GET['open-note']);
+$userId = 8;
+
+if(isset($_SESSION['user_id'])){
+  $userId = $_SESSION['user_id'];
+}
 
 if($addNote){
   include 'app/add-note/add-note.php';
@@ -18,17 +23,15 @@ if($openNote){
 if(isset($_GET['color']) && isset($_GET['text']) && isset($_GET["id"]) && !$addNote && !$openNote){
   $color="'".$_GET["color"]."'";
   $text="'".$_GET["text"]."'";
-  $userid = 8;
   $noteid = $_GET["id"];
-  $note = new Note($noteid,$userid,$text,$color);
+  $note = new Note($noteid,$userId,$text,$color);
   editNote($note); #note.service.php
-  echo '<script> location.href="/board"</script>';
+  //echo '<script> location.href="/board"</script>';
 
 }else if(isset($_GET['color']) && isset($_GET['text']) && !$addNote && !$openNote){
   $color="'".$_GET["color"]."'";
   $text="'".$_GET["text"]."'";
-  $userid = 8;
-  $note = new Note(null,$userid,$text,$color);
+  $note = new Note(null,$userId,$text,$color);  #note.entity.php
   addNote($note); #note.service.php
   echo '<script> location.href="/board"</script>';
 
@@ -38,6 +41,6 @@ if(isset($_GET['color']) && isset($_GET['text']) && isset($_GET["id"]) && !$addN
   echo '<script> location.href="/board"</script>';
 };
 
-$notes = getUserNotes(8); #note.service.php
+$notes = getUserNotes($userId); #note.service.php
 
 ?>
