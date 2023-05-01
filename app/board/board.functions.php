@@ -1,11 +1,13 @@
 <?php
+include 'app/note-miniature/note-miniature.php';
+include_once('app\nav\nav.functions.php');
+require_once('app/notification/notification.php');
 require_once('app/.data/entities/note.entity.php');
 require_once('app/.data/data-services/note.service.php');
-use noteEntity\Note;
 
+use noteEntity\Note;
 $addNote = isset($_GET['add-note']);
 $openNote = isset($_GET['open-note']);
-$userId = 8;
 
 if(isset($_SESSION['user_id'])){
   $userId = $_SESSION['user_id'];
@@ -18,7 +20,6 @@ if($addNote){
 if($openNote){
   include 'app/open-note/open-note.php';
 };
-
 
 if(isset($_GET['color']) && isset($_GET['text']) && isset($_GET["id"]) && !$addNote && !$openNote){
   $color="'".$_GET["color"]."'";
@@ -40,6 +41,13 @@ if(isset($_GET['color']) && isset($_GET['text']) && isset($_GET["id"]) && !$addN
   deleteNote($noteid); #note.service.php
   echo '<script> location.href="/board"</script>';
 };
+
+function extractId($object1,$object2){
+  if ($object1 -> noteid == $object2 -> noteid) {
+      return 0;
+  }
+  return ($object1 -> noteid < $object2 -> noteid) ? -1 : 1;
+}
 
 $notes = getUserNotes($userId); #note.service.php
 

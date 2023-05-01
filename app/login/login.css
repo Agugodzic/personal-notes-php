@@ -9,9 +9,9 @@
 }
 
 #login-window{
-  min-height:75vh;
+  min-height:72vh;
   height:fit-content;
-  width:60vw;
+  width:800px;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
   display: flex;
@@ -20,18 +20,18 @@
 }
 
 #login-form-container{
-  min-height:75vh;
+  min-height:72vh;
   height:fit-content;
-  width:30vw; 
+  width:400px; 
   align-items: center;
   align-items: center;
 }
 
 #login-info{
-  min-height:75vh;
+  min-height:500px;
   height:100%;
-  width:30vw;
-  background-color: rgb(101, 63, 236);
+  width:400px; 
+  background-color: rgb(237, 232, 255);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   background-image: url(https://img.freepik.com/fotos-premium/conjunto-notas-adhesivas-colores-blanco-gente-negocios-que-reune-usa-notas-post-it-compartir-ideas-nota-adhesiva-discutir-concepto-lluvia-ideas-sobre-trabajo-equipo-empresarial_661495-9402.jpg?w=800);
@@ -57,7 +57,7 @@ input{
   margin: 10px auto;
   margin-bottom: 20px;
   height:30px;
-  width: 18vw;
+  width: 255px;
   font-size: 16px;
   color:rgba(0, 0, 0, 0.897);
   text-align:left;
@@ -74,7 +74,7 @@ span{
   color:black;
   font-size: 18px;
   height:35px;
-  width: 20vw;
+  width: 280px;
   border-style: none;
   border-radius: 4px;
   margin: 10px;
@@ -98,4 +98,34 @@ span{
   background-color:  blue;
   margin:0;
   padding:0;
+}
+
+@media only screen and (max-width: 880px) {
+  #login-window{
+    width:50vw;
+  }
+  #login-form-container{
+    width:50vw;
+  }
+  #login-info{
+    visibility: hidden;
+    position:absolute;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  #login-window{
+    width:80vw;
+  }
+  #login-form-container{
+    width:80vw;
+  }
+
+  input{
+    width: 60vw;
+  }
+  .login-button{
+    width: 60vw;
+  }
 }

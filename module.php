@@ -3,11 +3,9 @@
   require_once('.router/router.functions.php');
   use router\Router;
 
-  session_start();
-
   $globalStyles = [
     'style.css',
-    '.error-pages/error-pages.css'
+    '.error-pages/error-pages.css',
   ];
 
   $globalViews = [
@@ -46,6 +44,14 @@
       ]
     ]
   ];
+  
+  $unrestrictedUrls = [
+    '/login',
+    '/register',
+    '/info'
+  ];
+
+  $initUri = '/login';
 
   function routerView(){
     global $globalViews;
@@ -82,7 +88,20 @@
         routerView();
         break;
     };
-
-   
   };
+
+  function unrestricted($unrestrictedUrls){
+    global $initUri;
+
+    if(isset($_SESSION['user_id'])){
+      $userId = $_SESSION['user_id'];
+    }else{
+      $uriIsRestricted = !in_array(route_uriForLevel(1), $unrestrictedUrls, $strict = true);
+      if($uriIsRestricted){
+        echo '<script>location.href="'.$initUri.'"</script>';
+      };
+    }
+  };
+
+  unrestricted($unrestrictedUrls);
 ?>

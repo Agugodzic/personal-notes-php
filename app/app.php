@@ -1,12 +1,7 @@
-<div id=app-container>
-<?php 
- /* require_once('app/app.module.php');
-  appInjected('view');*/
-    
-  if(!isset($_SESSION['user_id'])||empty($_SESSION['user_id'])){
-    echo '<script>location.href="/login"</script>';
-  }
+<?php include_once('app\nav\nav.functions.php') ?>
 
-  include 'app/board/board.temp.php';
-?>
+<div <?= theme_class("app-container")?> >
+  <?php 
+    include 'app/board/board.temp.php';
+  ?>
 </div>

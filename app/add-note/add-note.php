@@ -23,3 +23,4 @@
     location.href="/board";
   };
 </script>
+
