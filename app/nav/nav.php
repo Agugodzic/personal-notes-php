@@ -17,21 +17,22 @@
     <div id="nav-menu-options">	
       <a><p <?=theme_class("nav-menu-option")?> >Agregar nota</p></a>
       <a><p <?=theme_class("nav-menu-option")?> >Configuracion</p></a>
-      <a onclick="switchTheme()"><p <?=theme_class("nav-menu-option")?> ><img <?=theme_class("nav-menu-theme-icon")?>  src=<?= '"'.themeIcon().'"' ?> >Tema</p></a>
-
+      <form <?=theme_class("nav-menu-option")?> action="/board" method="get">
+        <input style="display:none" type="text"  name="theme"></input>
+        <button type="submit" <?=theme_class("nav-theme-button")?> ><img <?=theme_class("nav-menu-theme-icon")?>  src=<?= '"'.themeIcon().'"' ?> >Tema</button>
+      </form>
       <a id="button-side-switch"><p id="nav-menu-close" <?=theme_class("nav-menu-option")?>>Cerrar menu</p></a>
     </div>
   </div>
 
   <div id="nav-user-menu"<?=theme_class("nav-user-menu")?> >
     <div <?=theme_class("nav-user-menu-options")?>>	
-      <a><p <?=theme_class("nav-user-menu-option")?> >Configurar usuario</p></a>
-      <a><p <?=theme_class("nav-user-menu-option")?>  onclick="cerrarSesion()">Cerrar sesion</p></a> 
+      <a><p <?=theme_class("nav-menu-option")?> >Configurar usuario</p></a>
+      <a><p <?=theme_class("nav-menu-option")?>  onclick="cerrarSesion()">Cerrar sesion</p></a> 
     </div>
 
   </div>
 
 </div>
-
 
 <script src="app/nav/nav.script.js"></script>

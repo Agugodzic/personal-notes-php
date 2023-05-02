@@ -1,5 +1,5 @@
 <?php
-$_SESSION['theme'] = "dark";
+//$_SESSION['theme'] = "dark";
 
 
 function theme_selector($selector){

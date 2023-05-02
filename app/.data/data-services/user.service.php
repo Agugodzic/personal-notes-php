@@ -18,7 +18,7 @@
   };
 
   function editUser($userid,$valuesList){
-    return db_updateWhere('users', $valuesList, "userid = ". $userId); #dbFunctions.php
+    return db_updateWhere('users', $valuesList, "userid = ". $userid); #dbFunctions.php
   };
 
   function getUserById($userid){

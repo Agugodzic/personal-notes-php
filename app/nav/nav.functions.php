@@ -1,7 +1,6 @@
 <?php
 include_once(".tools/theme.tools.php");
 
-
 function themeIcon(){
   $themeIconUrl = "";
 
@@ -26,11 +25,5 @@ function switchTheme(){
 };
 };
 
-switchTheme();
+/* Used by: nav.php*/ 
 ?>
-
-<script>
-  switchTheme(){
-    return <?php switchTheme() ?>
-  }
-</script>
