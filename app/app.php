@@ -1,11 +1,9 @@
 <?php include_once('app\nav\nav.control.php') ?>
+<?php include_once('app\app.module.php') ?>
 
 <div <?= theme_class("app-container")?> >
-<img id="app-background" src=".files\pexels-cátia-matos-1072179.jpg">
+  <img id="app-background" src=<?=background()?> >
 
-  <?php 
-    include 'app/board/board.temp.php';
-  ?>
-  
+  <?php injectedModule('aplication')?>
 
 </div>

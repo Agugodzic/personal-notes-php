@@ -48,6 +48,7 @@ if(!empty($_GET['submit']) && !empty($_GET['user']) && !empty($_GET['password'])
   }else{
     $_SESSION['user_id'] = $userId;
     $_SESSION['theme'] = $userTheme;
+    $_SESSION['user_background'] = "";
     echo '
     <script>
     //alert("'.$_SESSION['theme'].'");

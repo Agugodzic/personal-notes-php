@@ -15,8 +15,6 @@
   <title>Personal Notes</title>
 </head>
 <body>
-  
-<?php injectedModule('aplication')?>
-
+  <?php require_once("app/app.php")?>
 </body>
 </html>

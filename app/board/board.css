@@ -6,7 +6,7 @@
   padding-top: 70px;
   height: 100%;
   margin:0 auto;
-  z-index:1000;
+  z-index:5000;
 }
 
 .new-note{

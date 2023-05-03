@@ -1,6 +1,9 @@
 <?php include_once('app/config/config.control.php')?>
 
 <div <?=theme_class('config-container')?>>
+
+  <img id="background-preview" src=<?= $previewBackground?>>
+
   <div <?=theme_class('config-window-container')?>> 
     <div id='config-window-buttons'>
       <p onclick="changePage('aspect')" <?=theme_class("config-button")?>>Aspecto</p>
@@ -14,17 +17,11 @@
         <h3 <?=theme_class("config-page-title")?>>Aspecto</h3>
         <div class="config-page-panel">
           <p <?=theme_class("config-page-subtitle")?>>Imagen de fondo:</p>
-          <img class="selector-image" src=".files\pexels-bri-schneiter-346529.jpg">
-          <img class="selector-image" src=".files\pexels-carlos-oliva-3586966.jpg">
-          <img class="selector-image" src=".files\pexels-cátia-matos-1072179.jpg">
-          <img class="selector-image" src=".files\pexels-codioful-(formerly-gradienta)-7130560.jpg">
-          <img class="selector-image" src=".files\pexels-suzukii-xingfu-872831.jpg">
-          <img class="selector-image" src=".files\pexels-turgay-koca-14917279.jpg">
-          <img class="selector-image" src=".files\pexels-walid-ahmad-847402.jpg">
+          <?php inputImageGenerator($background)?>
         </div>
-        <div clasS="config-page-buttons">
-          <button class="white-button">Cancelar</button>
-          <button class="blue-button">Guardar</button>
+        <div class="config-page-buttons">
+          <button onclick="location.href='/board'" class="white-button"><?= $exitText ?></button>
+          <button class="blue-button" onclick='saveBackground()'>Guardar</button>
         </div>
       </div>
 
@@ -44,5 +41,31 @@
     </div>
   </div>
   
-  <script src="app/config/config.script.js"></script>
-  <script>changePage("<?=$page?>")</script>
+  <script>
+    let aspectPage = document.getElementById("config-page-aspect");
+    let userPage = document.getElementById("config-page-user");
+    var backgroundId = 0;
+
+    function selectBackground(id,url){
+      let background = document.getElementById("background-preview");
+      backgroundId = id;
+      background.src=url;
+      background.style.zIndex = 1000;
+    };
+
+    function saveBackground(){
+      location.href="/config?background="+backgroundId;
+    }
+
+    function changePage(page){
+      if(page == "aspect"){
+        aspectPage.style.display = "block";
+        userPage.style.display = "none";    
+      }else if(page == "user"){
+        aspectPage.style.display = "none";
+        userPage.style.display = "block";
+      }
+    }
+    changePage("<?=$page?>");
+
+  </script>

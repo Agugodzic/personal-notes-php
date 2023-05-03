@@ -1,13 +1,23 @@
 .config-container{
- min-height: calc(100vh);
+ min-height: 100vh;
  background-color: rgb(255, 255, 255);
  display: flex;
  align-items: center;
  vertical-align: center;
+ z-index: 5000;
 }
   .config-container-dark{
     background-color: rgb(0, 0, 0);
   }
+
+#background-preview{
+  position:absolute;
+  max-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  top:0;
+  left: 0;
+}
 
 
 .config-window-container{
@@ -21,6 +31,7 @@
   border-style: solid;
   border-width: 1px;
   border-color:  #b6b6b6;
+  z-index: 5000;
 }
   .config-window-container-dark{
     background-color: #1b1b1b;
@@ -42,6 +53,10 @@
   min-height: 70vh;
   width:40vw;
   margin: 6px 0;
+}
+
+#config-page-user{
+  display:none;
 }
 
 .config-button{
@@ -107,6 +122,31 @@
   border-radius: 5px;
   margin:5px;
   cursor:pointer;
+}
+.selector-none{
+  background-color:rgba(207, 207, 207, 0.137);
+  height:50px;
+  border-radius: 5px;
+  margin:10px auto;
+  cursor:pointer;
+}
+  .selector-none-dark{
+    background-color:rgba(209, 209, 209, 0.137);
+    filter:invert(100%);
+    opacity: 65%;
+  }
+
+#selector-none-container{
+  height: 70px;
+  width: 70px;
+  background-color: rgba(155, 155, 155, 0.075);
+  border-radius: 5px;
+  display: flex;
+  vertical-align: center;
+  align-items: center;
+  align-content: center;
+  margin:5px;
+  transform:translateY(-15px)
 }
 
 .config-page-buttons{
