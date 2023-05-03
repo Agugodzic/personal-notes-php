@@ -9,6 +9,8 @@
   margin: 20px 15px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.24);
   cursor:pointer;
+  border-radius: 3px;
+  z-index:1000;
 }
 
 .note-text{
@@ -16,21 +18,13 @@
   width: fit-content;
   height: fit-content;
 }
-
-.note-pin{
-  margin:8px auto;
-  height:24px;
-  width: 30px;
-  opacity: 70%;
-}
-
-.red-note{
-  background-color:#EFA9A9;  
-  transform: rotate(0.5);
-}
 .blue-note{
   background-color:#A9D5EF;
   transform: rotate(-1deg);
+}
+.red-note{
+  background-color:#efd9a9;  
+  transform: rotate(0.5);
 }
 .green-note{
   background-color:#B0EFA9;

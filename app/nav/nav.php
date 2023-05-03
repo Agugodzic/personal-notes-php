@@ -1,4 +1,4 @@
-<?php include_once('app\nav\nav.functions.php') ?>
+<?php include_once('app\nav\nav.control.php') ?>
 
 <div <?=theme_class("nav-container")?> >
   <div id="nav-menu">
@@ -15,8 +15,9 @@
   <div id="nav-side-menu" <?=theme_class("nav-side-menu")?> >
 
     <div id="nav-menu-options">	
-      <a><p <?=theme_class("nav-menu-option")?> >Agregar nota</p></a>
-      <a><p <?=theme_class("nav-menu-option")?> >Configuracion</p></a>
+      <a href="/board?add-note"><p <?=theme_class("nav-menu-option")?> >Agregar nota</p></a>
+      <a href='/config'><p <?=theme_class("nav-menu-option")?> >Configuracion</p></a>
+      <a href='/board'><p <?=theme_class("nav-menu-option")?> >Mis notas</p></a>
       <form <?=theme_class("nav-menu-option")?> action="/board" method="get">
         <input style="display:none" type="text"  name="theme"></input>
         <button type="submit" <?=theme_class("nav-theme-button")?> ><img <?=theme_class("nav-menu-theme-icon")?>  src=<?= '"'.themeIcon().'"' ?> >Tema</button>
@@ -27,7 +28,7 @@
 
   <div id="nav-user-menu"<?=theme_class("nav-user-menu")?> >
     <div <?=theme_class("nav-user-menu-options")?>>	
-      <a><p <?=theme_class("nav-menu-option")?> >Configurar usuario</p></a>
+      <a href='/config?user'><p <?=theme_class("nav-menu-option")?> >Configurar usuario</p></a>
       <a><p <?=theme_class("nav-menu-option")?>  onclick="cerrarSesion()">Cerrar sesion</p></a> 
     </div>
 

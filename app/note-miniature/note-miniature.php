@@ -21,7 +21,6 @@
 
     echo'
       <div class="note-container '.$noteStyle.'">
-        <!-- <img class="note-pin" src="https://www.pngall.com/wp-content/uploads/2/Drawing-Pin.png"> -->
         <div class="note-text">'.$text.'</div>
       </div>
     ';  

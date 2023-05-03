@@ -1,6 +1,6 @@
 <?php 
   include 'app/nav/nav.php';
-  include 'board.functions.php';
+  include 'board.php';
  ?>
 
 <div id="board-container">

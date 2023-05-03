@@ -28,6 +28,14 @@
         'app/notification/notification.css'
       ]
     ],
+    ['/config',
+      'app/config/config.php',[
+        'app/config/config.css',
+        'app/app.css',
+        'app/nav/nav.css',
+        'app/notification/notification.css'
+      ]
+    ],
     ['/login',
       'app/login/login.php',[
         'app/app.css',

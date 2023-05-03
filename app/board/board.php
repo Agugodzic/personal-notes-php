@@ -1,6 +1,5 @@
 <?php
 include 'app/note-miniature/note-miniature.php';
-include_once('app\nav\nav.functions.php');
 require_once('app/notification/notification.php');
 require_once('app/.data/entities/note.entity.php');
 require_once('app/.data/data-services/note.service.php');

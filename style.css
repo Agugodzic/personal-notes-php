@@ -1,6 +1,5 @@
 html{
   background-color: rgb(2, 2, 2);
-  background-image: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdHAyNTYtYmFja2dyb3VuZC0yNS5qcGc.jpg);
   background-size:cover;
 }
 body{
@@ -15,4 +14,29 @@ a{
 }
 button{
   cursor:pointer;
+}
+
+.blue-button{
+  padding:7px 14px;
+  border-radius: 10px;
+  background-color: rgba(2, 92, 209, 0.911);
+  box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.24);
+  border-style: none;
+  margin:10px;
+  margin-top:20px;
+  font-size: 16px;
+  min-width: 100px;
+}
+
+.white-button{
+  padding:7px 14px;
+  border-radius: 10px;
+  background-color: rgba(233, 233, 233, 0.87);
+  color:rgb(17, 17, 17);
+  box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.24);
+  border-style: none;
+  margin:10px;
+  margin-top:20px;
+  font-size: 16px;
+  min-width: 100px;
 }
