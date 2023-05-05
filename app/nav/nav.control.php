@@ -1,6 +1,4 @@
 <?php
-include_once(".tools/theme.tools.php");
-
 function themeIcon(){
   $themeIconUrl = "";
 

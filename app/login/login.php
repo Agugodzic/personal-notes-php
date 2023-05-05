@@ -1,6 +1,8 @@
 <?php include 'login.functions.php' ?>
 
 <div id="login-container">
+<img id="login-background" src='.files\image3.jpg' >
+
   <div id="login-window">
     <div id="login-form-container">
       <form method="get" action="" id="login-form">

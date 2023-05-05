@@ -1,7 +1,7 @@
 <?php 
   require_once('.router/router.php');
   require_once('.router/router.functions.php');
-  require_once('.tools\theme.tools.php');
+
   use router\Router;
 
   $globalStyles = [
@@ -30,8 +30,8 @@
       ]
     ],
     ['/config',
-      'app/config/config.php',[
-        'app/config/config.css',
+      'app/config/config.temp.php',[
+        'app/config/config.style.css',
         'app/app.css',
         'app/nav/nav.css',
         'app/notification/notification.css'
@@ -115,8 +115,22 @@
   unrestricted($unrestrictedUrls);
 
   function background(){
-    if(isset($_SESSION['user_background']) && route_uriForLevel(1) != '/login' && route_uriForLevel(1) != '/register'){
-      return $_SESSION['user_background'];
+    include_once('app\.data\data-services\background.service.php');
+    $background =  get_background(); #background.service.php
+    if(isset($_GET["background"])){
+      $backgroundId = $_GET["background"];
+      if($backgroundId != 0){
+        return $background[$backgroundId][0];
+      }else{
+        return "";
+      }
+    }else if(isset($_SESSION['user_background']) && route_uriForLevel(1) != '/login' && route_uriForLevel(1) != '/register'){
+      $backgroundId = $_SESSION['user_background'];
+      if($backgroundId != 0){
+        return $background[$backgroundId][0];
+      }else{
+        return "";
+      }
     }else{
       return "";
     }

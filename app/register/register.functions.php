@@ -70,7 +70,7 @@ function showMsj(){
     $password = $_GET['password'];
     $passwordRepeat = $_GET['passwordrepeat'];
 
-    $user = new User(null,$user,$email,$password,'default');
+    $user = new User(null,$user,$email,$password,'default',0);
     $newUser = addUser($user); #user.service.php
     $userid=8;
     $fila = pg_fetch_object($newUser);

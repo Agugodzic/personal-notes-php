@@ -1,11 +1,22 @@
 #login-container{
-  background-image: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdHAyNTYtYmFja2dyb3VuZC0yNS5qcGc.jpg);
+  background-image: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdHAyNTYtYmFja2dyb3VuZC0yNS5qcGc.jpg');
   height:100vh;
   width:100vw;
   display:flex;
   align-items: center;
   justify-content: center;
   background-size: cover;
+  z-index:6000;
+}
+
+#login-background{
+  position:absolute;
+  max-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  top:0;
+  left: 0;
+  z-index:0;
 }
 
 #login-window{
@@ -17,6 +28,7 @@
   display: flex;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.418);
   align-items: center;
+  z-index:6000;
 }
 
 #login-form-container{

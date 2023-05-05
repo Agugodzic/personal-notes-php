@@ -15,6 +15,7 @@
   <title>Personal Notes</title>
 </head>
 <body>
+<div <?=theme_class('global-background')?>></div>
   <?php require_once("app/app.php")?>
 </body>
 </html>

@@ -10,6 +10,8 @@
     background-color: rgb(0, 0, 0);
   }
 
+
+  
 #background-preview{
   position:absolute;
   max-height: 100vh;
@@ -17,7 +19,18 @@
   overflow-x: hidden;
   top:0;
   left: 0;
+  background-color: rgb(255, 255, 255);
 }
+#background-preview-dark{
+  position:absolute;
+  max-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  top:0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+}
+
 
 
 .config-window-container{
@@ -39,6 +52,7 @@
   }
   
 
+
 #config-window-buttons{
   border-right-style:solid;
   border-color:#5252522d;
@@ -49,15 +63,18 @@
   padding:0;
 } 
 
+
 #config-window-controls{
   min-height: 70vh;
   width:40vw;
   margin: 6px 0;
 }
 
+
 #config-page-user{
   display:none;
 }
+
 
 .config-button{
   height: 50px;
@@ -84,6 +101,7 @@
   }
 
 
+
 .config-page{
   color:rgba(26, 26, 26, 0.849);
   padding: 0 30px;
@@ -91,6 +109,12 @@
   .config-page-dark{
   color:white;
   }
+
+.config-page-panel{
+  text-align: right;
+  width: fit-content;
+}
+
 
 
 .config-page-title{
@@ -102,6 +126,7 @@
     color:white;
     font-weight: 300;
   }
+
 
 
 .config-page-subtitle{
@@ -123,6 +148,8 @@
   margin:5px;
   cursor:pointer;
 }
+
+
 .selector-none{
   background-color:rgba(207, 207, 207, 0.137);
   height:50px;
@@ -135,6 +162,8 @@
     filter:invert(100%);
     opacity: 65%;
   }
+
+
 
 #selector-none-container{
   height: 70px;
@@ -149,6 +178,91 @@
   transform:translateY(-15px)
 }
 
+
 .config-page-buttons{
   margin-top:50px;
 }
+
+
+.config-user-element{
+  color:black;
+  text-align: left;
+  font-weight: 400;
+  margin:50px 0;
+  min-width: 30vw;
+}
+  .config-user-element-dark{
+    color:rgb(206, 206, 206);
+    font-weight: 200;
+  }
+
+
+
+.config-user-element-name{
+  font-weight: 400;
+  color:inherit;
+  display:inline;
+}
+
+
+
+.config-page-icon{
+  height: 14px;
+  margin: 0 15px;
+  cursor:pointer;
+}
+ .config-page-icon-dark{
+    filter:invert(100%)
+  }
+
+
+
+.config-user-form{
+  margin:0;
+  padding:0;
+  height: fit-content;
+  display: inline;
+  position:relative;
+  text-align: left;
+  opacity: 90%;
+}
+
+
+.config-user-input{
+  display:inline;
+  margin:0 15px;
+  padding:0;
+  color:rgb(0, 0, 0);
+  height: 26px;
+  font-size:15px;
+  width: 170px;
+  border-style: none;
+  border-bottom-style:solid;
+  outline: none;
+  border-width: 1px;
+}
+  .config-user-input-dark{
+    color:rgb(236, 236, 236);
+    background-color:#1b1b1b;
+  }
+
+
+
+.config-user-form-button{
+  padding:2px 10px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.925);
+  color:rgb(7, 7, 7);
+  box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.24);
+  border-style: none;
+  font-size: 15px;
+}
+  .config-user-form-button-black{
+    color:black
+  }
+
+  .delete-account{
+
+    text-align: left;
+    width: 100%;
+  }

@@ -35,9 +35,12 @@ if(!empty($_GET['submit']) && !empty($_GET['user']) && !empty($_GET['password'])
   $userId;
   
   while($obj = pg_fetch_object($userData)){
-    $users[] = new User($obj->userid,$obj,$obj->email,$obj->password,$obj->theme);
+    $users[] = new User($obj->userid,$obj->username,$obj->email,$obj->password,$obj->theme,$obj->background);
     $userId = $obj->userid;
+    $userName = $obj->username;
+    $userEmail = $obj->email;
     $userTheme = $obj->theme;
+    $userBackground = $obj->background;
   };
   
   if(empty($userId)){
@@ -47,8 +50,10 @@ if(!empty($_GET['submit']) && !empty($_GET['user']) && !empty($_GET['password'])
     ';
   }else{
     $_SESSION['user_id'] = $userId;
+    $_SESSION['user_name'] = $userName;
+    $_SESSION['user_email'] = $userEmail;
     $_SESSION['theme'] = $userTheme;
-    $_SESSION['user_background'] = "";
+    $_SESSION['user_background'] = $userBackground;
     echo '
     <script>
     //alert("'.$_SESSION['theme'].'");

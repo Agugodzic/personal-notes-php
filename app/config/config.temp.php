@@ -2,13 +2,12 @@
 
 <div <?=theme_class('config-container')?>>
 
-  <img id="background-preview" src=<?= $previewBackground?>>
+  <img <?=theme_id("background-preview")?> src=<?= $previewBackground?>>
 
   <div <?=theme_class('config-window-container')?>> 
     <div id='config-window-buttons'>
       <p onclick="changePage('aspect')" <?=theme_class("config-button")?>>Aspecto</p>
       <p onclick="changePage('user')" <?=theme_class("config-button")?>>Datos de usuario</p>
-      <p <?=theme_class("config-button")?>>Notas</p>
     </div>
 
     <div id='config-window-controls'>
@@ -29,6 +28,35 @@
         <h3 <?=theme_class("config-page-title")?>>Datos de usuario</h3>
         <div class="config-page-panel">
 
+          <p <?=theme_class("config-user-element")?> >
+            <form class="config-user-form">
+              <span class="config-user-element-name">Nombre de usuario:</span> 
+              <input <?=theme_class("config-user-input")?> type="text" value="<?=$username?>" name="username"></input>
+              <button <?=theme_class("config-user-form-button")?>>Guardar</button>
+            </form>
+          </p>
+
+          <p <?=theme_class("config-user-element")?> >
+            <form class="config-user-form">
+              <span class="config-user-element-name">Email:</span> 
+              <input <?=theme_class("config-user-input")?> type="text" value="<?=$email?>" name="email"></input>
+              <button <?=theme_class("config-user-form-button")?>>Guardar</button>
+            </form>
+          </p>
+
+          <p <?=theme_class("config-user-element")?> >
+            <form class="config-user-form">
+              <span class="config-user-element-name">Contraseña:</span> 
+              <input <?=theme_class("config-user-input")?> type="text" value="<?=$password?>" name="password"></input>
+              <button <?=theme_class("config-user-form-button")?>>Guardar</button>
+            </form>
+          </p>
+ 
+            <button class="red-button delete-account">Eliminar cuenta</button>
+
+          <div class="config-page-buttons-user"> 
+            <button onclick="location.href='/board'" class="blue-button">Listo!</button>
+          </div>
         </div>
       </div>
 
@@ -44,7 +72,7 @@
   <script>
     let aspectPage = document.getElementById("config-page-aspect");
     let userPage = document.getElementById("config-page-user");
-    var backgroundId = 0;
+    var backgroundId = "<?= $userBackground ?>";
 
     function selectBackground(id,url){
       let background = document.getElementById("background-preview");
