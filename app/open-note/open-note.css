@@ -43,6 +43,7 @@ input[type="radio"]:checked {
   display:flex;
   align-items: center;
   justify-content: center;
+  position:relative;
 }
 #open-note-textarea{
   min-height: 70vh;
@@ -56,6 +57,7 @@ input[type="radio"]:checked {
   font-size: 20px;
   padding:20px;
   outline: none;
+  position:relative;
 }
 
 #open-note-save-buton{
@@ -141,4 +143,27 @@ input[type="radio"]:checked {
 #open-note-delete-img:hover{
   opacity: 87%;
   height:45px;
+}
+
+#open-note-compartir-wsp{
+  min-width: fit-content;
+  color:rgb(37, 18, 18);
+  font-size: 13px;
+  position:absolute;
+  bottom:2px;
+  left:8px;
+  opacity:60%;
+  padding:2px 4px;
+  border-radius: 4px;
+  cursor:pointer;
+  transform: translateY(4px);
+}
+#open-note-compartir-wsp:hover{
+  opacity:100%;
+}
+
+#open-note-wsp-logo{
+  height:15px;
+  transform: translateY(2px);
+  opacity: 70%;
 }

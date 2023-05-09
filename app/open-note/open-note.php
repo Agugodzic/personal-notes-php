@@ -1,10 +1,14 @@
-<?php include 'open-note.functions.php'?>
+<?php include 'open-note.control.php'?>
 
 <div id="open-note-container">
   <form name="noteform">
     <input type="number" value = '<?= $openNoteId?>' style="visibility:hidden" name="id"></input>
     <div id="open-note">
       <textarea id="open-note-textarea" name="text"><?= $openNoteText ?></textarea>
+      <p id="open-note-compartir-wsp">
+        <img id="open-note-wsp-logo" src="https://seeklogo.com/images/W/whatsapp-logo-112413FAA7-seeklogo.com.png"></img>
+        Enviar por wsp
+      </p>
     </div>
     <div id="open-note-set-color">
       <label class="open-note-color-input" onclick = "changeColor('#f3ff45')"><input type="radio" class="yellow" value="yellow" name="color"></label>
@@ -13,7 +17,7 @@
       <label class="open-note-color-input" onclick = "changeColor('#ff8787')"><input type="radio" class="red" value="red" name="color"></label>
     </div>
     <button id="add-note-save-buton" type="submit">Guardar</button>
-    <button id="add-note-close-buton" type="reset" onclick="back()"> Cerrar</button>
+    <button id="add-note-close-buton" type="reset" onclick="back()">Cerrar</button>
   </form>
   <form name="deleteform" id="open-note-delete-form">
     <input type="number" value = '<?= $openNoteId?>' style="visibility:hidden" name="id"></input>

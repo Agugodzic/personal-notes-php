@@ -17,7 +17,7 @@
 
   $connection = pg_connect(
       "host=".$DB_HOST." ".
-      "dbname=".$DB_TABLE." ".
+      "dbname=".$DB_NAME." ".
       "user=".$DB_USERNAME." ".
       "password=".$DB_PASSWORD." "
       )or die( 
