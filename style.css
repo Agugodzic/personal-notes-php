@@ -1,3 +1,5 @@
+
+
 html{
   background-color: rgb(255, 255, 255);
 }
@@ -7,7 +9,18 @@ body{
   padding:0;
   color:black;
 }
+body::-webkit-scrollbar {
+  position: absolute;
+  width: 7px;
+  background-color: rgba(223, 223, 223, 0.938);
+  width: 4px;
+  height: 3px;
+}
+body::-webkit-scrollbar-thumb {
+  background:rgba(19, 19, 19, 0.904);
+  border-radius: 5px;
 
+}
 a{
   text-decoration:none;
   cursor:pointer;

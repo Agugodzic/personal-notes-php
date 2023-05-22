@@ -1,7 +1,11 @@
-<?php include 'login.functions.php' ?>
+<?php include 'login.control.php' ?>
 
 <div id="login-container">
-<img id="login-background" src='.files\image3.jpg' >
+<img id="login-background" src='.files\image7.jpg' >
+<div id="logo-container">
+  <img id="logo-img" src=".files/logo.png">
+  <span id="logo-text">Personal Notes</span>
+</div>
 
   <div id="login-window">
     <div id="login-form-container">
@@ -15,10 +19,6 @@
       </form>
       <button class="login-button" id="login-form-button-register" onclick="location.href='/register'">Registrarse</button>
       <?php showMsj() ?>
-    </div>
-    <div id="login-info">
-      <h3 id="login-info-title"><h3>
-      <p id="login-info-text"></p>
     </div>
   </div>
 </div>

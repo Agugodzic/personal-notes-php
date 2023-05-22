@@ -11,7 +11,7 @@
 
   $globalViews = [
     ['/',
-      'app/board/board.temp.php',[
+      'app/board/board.view.php',[
         'app/app.css',
         'app/nav/nav.css',
         'app/note-miniature/note-miniature.css',
@@ -19,7 +19,7 @@
       ]
     ],
     ['/board',
-      'app/board/board.temp.php',[
+      'app/board/board.view.php',[
         'app/app.css',
         'app/nav/nav.css',
         'app/note-miniature/note-miniature.css',
@@ -30,15 +30,15 @@
       ]
     ],
     ['/config',
-      'app/config/config.temp.php',[
-        'app/config/config.style.css',
+      'app/config/config.view.php',[
+        'app/config/config.css',
         'app/app.css',
         'app/nav/nav.css',
         'app/notification/notification.css'
       ]
     ],
     ['/login',
-      'app/login/login.php',[
+      'app/login/login.view.php',[
         'app/app.css',
         'app/login/login.css',
         'app/TEST/TEST.css',
@@ -46,7 +46,7 @@
         ]
     ],
     ['/register',
-      'app/register/register.php',[
+      'app/register/register.view.php',[
         'app/app.css',
         'app/register/register.css',
         'app/TEST/TEST.css'
@@ -57,6 +57,18 @@
         'app/app.css'
       ]
     ]
+    /*
+
+    ['/route',
+      'view.php',[
+        'style1.css',
+        'style2.css',
+        ...
+      ]
+    ], 
+    ...    
+
+    */
   ];
   
   $unrestrictedUrls = [

@@ -9,7 +9,7 @@
       <label class="add-note-color-input" onclick = "changeColor('#b2ff96')"><input type="radio" class="green" value="green" name="color"></label>
       <label class="add-note-color-input" onclick = "changeColor('#ff8787')"><input type="radio" class="red" value="red" name="color"></label>
     </div>
-    <button id="add-note-save-buton" type="submit">Guardar</button>
+    <button class="blue-button" type="submit">Guardar</button>
     <button id="add-note-close-buton" type="reset" onclick="back()"> Cerrar</button>
   </form>
 </div>

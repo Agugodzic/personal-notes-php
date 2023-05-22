@@ -23,7 +23,7 @@ input[type="radio"]:checked {
   height: 100vh;
   width: 100vw;
   position:fixed;
-  z-index:5000;
+  z-index:12000;
   display:flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +36,8 @@ input[type="radio"]:checked {
 #open-note{
   min-height: 75vh;
   height: fit-content;
-  width:550px;
+  width:500px;
+  max-height: 75vh;
   background-color: rgb(252, 255, 61);
   border-radius: 5px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.24);
@@ -45,9 +46,10 @@ input[type="radio"]:checked {
   justify-content: center;
   position:relative;
 }
+
 #open-note-textarea{
   min-height: 70vh;
-  min-width:500px;
+  min-width:450px;
   max-height: 80vh;
   width:500px;
   border-style: none;
@@ -58,6 +60,19 @@ input[type="radio"]:checked {
   padding:20px;
   outline: none;
   position:relative;
+}
+
+#open-note-textarea::-webkit-scrollbar {
+  position: absolute;
+  width: 7px;
+  background-color: rgba(223, 223, 223, 0);
+  width: 4px;
+  height: 3px;
+}
+#open-note-textarea::-webkit-scrollbar-thumb {
+  background:rgba(19, 19, 19, 0.432);
+  border-radius: 5px;
+
 }
 
 #open-note-save-buton{
@@ -129,20 +144,20 @@ input[type="radio"]:checked {
   height:0;
   width:0;
   padding:0;
-  margin-bottom: 200px;
+  margin-bottom: 20vh;
   margin-left: 10px;
 }
 
 #open-note-delete-img{
-  opacity: 60%;
+  opacity: 85%;
   height:35px;
   position:absolute;
   transition:0.18s;
   transform:translate(-17px, -17px);
 }
 #open-note-delete-img:hover{
-  opacity: 87%;
-  height:45px;
+  opacity: 95%;
+  height:40px;
 }
 
 #open-note-compartir-wsp{
@@ -166,4 +181,59 @@ input[type="radio"]:checked {
   height:15px;
   transform: translateY(2px);
   opacity: 70%;
+}
+
+
+@media screen and  (max-width:700px) {
+  #open-note{
+    width:90vw;
+    padding: 1px;
+    min-height: auto;
+    max-height: 60vh;
+  }
+  
+  #open-note-textarea{
+    max-width:82vw;
+    word-wrap: break-word;
+    min-width:auto;
+    width:500px;
+    padding:15px;
+    min-height: auto;
+    height: 55vh;
+    max-height: 55vh;
+  }
+
+  #open-note-form{
+    margin-bottom: 25px;
+  }
+
+  #open-note-delete-button{
+    height:40px;
+  }
+  
+  #open-note-delete-form{
+    margin-bottom: 0px;
+    margin-left: 0px;
+
+  }
+  
+  #open-note-delete-img{
+    position:absolute;
+    left:48%;
+    bottom:20px;
+    opacity: 95%;
+    height:35px;
+    transition:0.18s;
+    transform:translate(0px, 0px);
+  }
+  #open-note-delete-img:hover{
+    opacity: 95%;
+    height:36px;
+  }
+
+  #open-note-container{
+    background-color: rgba(0, 0, 0, 0.76);
+    /*backdrop-filter: blur(10px);*/
+    /*backdrop-filter: saturate(80%);*/
+  }
 }

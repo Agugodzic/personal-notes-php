@@ -47,8 +47,8 @@
           <p <?=theme_class("config-user-element")?> >
             <form method="post" class="config-user-form">
               <span class="config-user-element-name">Contraseña:</span> 
-              <input <?=theme_class("config-user-input")?> type="text" value="<?=$password?>" name="password"></input>
-              <button id="show-password-button"><img id="show-password-button-image" src=".files/eye-white.png"></button>
+              <input <?=theme_class("config-user-input")?> type="<?=$showPasswordType?>" value="<?=$password?>" name="password"></input>
+              <button type="button" onclick="<?=$showPasswordFunction?>" id="show-password-button"><img class="show-password-button-image" src="<?=$showPasswordImage?>"></button>
               <button <?=theme_class("config-user-form-button")?>>Guardar</button>
             </form>
           </p>
@@ -74,6 +74,16 @@
     let aspectPage = document.getElementById("config-page-aspect");
     let userPage = document.getElementById("config-page-user");
     var backgroundId = "<?= $userBackground ?>";
+
+    function showPassword(){
+      window.location.href ="config?user&pview";
+    }
+
+    function unviewPassword(){
+      let URL = window.location.toString();
+        URL = URL.substr(0, URL.length - 6);
+        window.location = URL;
+    }
 
     function selectBackground(id,url){
       let background = document.getElementById("background-preview");

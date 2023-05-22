@@ -17,11 +17,11 @@ if(isset($_SESSION['user_id'])){
 };
 
 if($addNote){
-  include 'app/add-note/add-note.php';
+  include 'app/add-note/add-note.view.php';
 };
 
 if($openNote){
-  include 'app/open-note/open-note.php';
+  include 'app/open-note/open-note.view.php';
 };
 
 if(isset($_GET['color']) && isset($_GET['text']) && isset($_GET["id"]) && !$addNote && !$openNote){

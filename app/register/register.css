@@ -1,11 +1,20 @@
 #register-container{
-  background-image: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdHAyNTYtYmFja2dyb3VuZC0yNS5qcGc.jpg);
   height:100vh;
   width:100vw;
   display:flex;
   align-items: center;
   justify-content: center;
   background-size: cover;
+}
+
+#register-background{
+  position:absolute;
+  max-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  top:0;
+  left: 0;
+  z-index:0;
 }
 
 #register-window{
@@ -94,4 +103,25 @@
   bottom:11px;
   left:0;
   right: 0;
+}
+
+#logo-container{
+  position:absolute;
+  display: flex;
+  align-items: center;
+  top:18px;
+  left: 20px;
+}
+
+#logo-img{
+  height: 26px;
+  display: inline;
+  margin-right: 8px;
+}
+
+#logo-text{
+  display:inline;
+  font-size: 18px;
+  color:rgba(255, 255, 255, 0.993);
+  font-family: 'Century Gothic';
 }

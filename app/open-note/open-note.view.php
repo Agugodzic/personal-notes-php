@@ -1,7 +1,7 @@
 <?php include 'open-note.control.php'?>
 
 <div id="open-note-container">
-  <form name="noteform">
+  <form name="noteform" id="open-note-form">
     <input type="number" value = '<?= $openNoteId?>' style="visibility:hidden" name="id"></input>
     <div id="open-note">
       <textarea id="open-note-textarea" name="text"><?= $openNoteText ?></textarea>
@@ -16,12 +16,12 @@
       <label class="open-note-color-input" onclick = "changeColor('#b2ff96')"><input type="radio" class="green" value="green" name="color"></label>
       <label class="open-note-color-input" onclick = "changeColor('#ff8787')"><input type="radio" class="red" value="red" name="color"></label>
     </div>
-    <button id="add-note-save-buton" type="submit">Guardar</button>
-    <button id="add-note-close-buton" type="reset" onclick="back()">Cerrar</button>
+    <button class="blue-button" type="submit">Guardar</button>
+    <button id="add-note-close-buton" type="button" onclick="back()">Cerrar</button>
   </form>
   <form name="deleteform" id="open-note-delete-form">
-    <input type="number" value = '<?= $openNoteId?>' style="visibility:hidden" name="id"></input>
-    <input type="text" value="delete" name ="action" style="visibility:hidden"></input>
+    <input type="number" value = '<?= $openNoteId?>' style="display:none" name="id"></input>
+    <input type="text" value="delete" name ="action" style="display:none"></input>
     <button id="open-note-delete-button"><img src="https://cdn-icons-png.flaticon.com/512/3687/3687412.png" id="open-note-delete-img"></button>
   </form>
 </div>

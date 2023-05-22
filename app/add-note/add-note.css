@@ -22,7 +22,7 @@ input[type="radio"]:checked {
   height: 100vh;
   width: 100vw;
   position:fixed;
-  z-index:5000;
+  z-index:13000;
   display:flex;
   align-items: center;
   justify-content: center;
@@ -113,4 +113,30 @@ input[type="radio"]:checked {
 
 .yellow{
   background-color: #f5ff6c;
+}
+
+@media screen and  (max-width:700px) {
+  #add-note{
+    width:90vw;
+    padding: 1px;
+    min-height: auto;
+    max-height: 60vh;
+  }
+  
+  #add-note-textarea{
+    max-width:82vw;
+    word-wrap: break-word;
+    min-width:auto;
+    width:500px;
+    padding:15px;
+    min-height: auto;
+    height: 55vh;
+    max-height: 55vh;
+  }
+
+  #add-note-container{
+    background-color: rgba(0, 0, 0, 0.733);
+    /*backdrop-filter: blur(10px);*/
+    /*backdrop-filter: saturate(80%);*/
+  }
 }

@@ -1,6 +1,11 @@
-<?php include 'register.functions.php' ?>
+<?php include 'register.control.php' ?>
 
 <div id="register-container">
+<img id="register-background" src='.files\image7.jpg' >
+<div id="logo-container">
+  <img id="logo-img" src=".files/logo.png">
+  <span id="logo-text">Personal Notes</span>
+</div>
   <div id="register-window">
     <div id="register-form-container">
       <form method="get" action="" id="login-form">
