@@ -12,25 +12,25 @@ $email = $_SESSION['user_email'];
 $userBackground = $_SESSION['user_background'];
 $password= "•••••••••••••";
 
-if(isset($_GET["user"]) || isset($_GET["username"]) || isset($_GET["email"]) || isset($_GET["password"]) ){
+if(isset($_GET["user"]) || isset($_POST["username"]) || isset($_POST["email"]) || isset($_POST["password"]) ){
   $page = "user";
 };
 
-if( isset($_GET["username"])){
-  $username = $_GET['username'];
+if(isset($_POST["username"])){
+  $username = $_POST['username'];
   $_SESSION['user_name'] = $username;
   $userValue = ["username" => "'".$username."'"];
   editUser($userId,$userValue); #user.service.php
 };
 
-if( isset($_GET["email"])){
-  $email= $_GET["email"];
+if(isset($_POST["email"])){
+  $email= $_POST["email"];
   $_SESSION['user_email'] = $email;
   $emailValue = ["email" => "'".$email."'"];
   editUser($userId,$emailValue); #user.service.php
 };
 
-if(isset($_GET["password"])){
+if(isset($_POST["password"])){
   $passwordValue = ["password" => $_GET["password"]];
   editUser($userId,$passwordValue); #user.service.php
 };

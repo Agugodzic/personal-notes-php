@@ -29,4 +29,8 @@
     return db_getWhere('users', "username = '". $username  ."' AND password = '". $password."'"); #dbFunctions.php
   };
 
+  function getUserByUsername($username){
+    return db_getWhere('users', "username = '". $username."'"); #dbFunctions.php
+  };
+
 ?>

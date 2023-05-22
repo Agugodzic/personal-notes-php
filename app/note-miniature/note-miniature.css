@@ -4,7 +4,7 @@
   max-width: 200px;
   height: fit-content;
   min-height: 80px;
-  padding: 30px 20px;
+  padding: 30px 18px;
   display:inline-flex;
   flex-direction: column;
   margin: 20px 15px;
@@ -18,7 +18,12 @@
   color:rgb(0, 0, 0);
   width: fit-content;
   height: fit-content;
+  min-height: 15px;
+  max-width: 184px;
+  max-height: 85px;
+  word-wrap: break-word;
 }
+
 .blue-note{
   background-color:#A9D5EF;
   transform: rotate(-1deg);

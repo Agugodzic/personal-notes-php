@@ -51,6 +51,11 @@
         'app/register/register.css',
         'app/TEST/TEST.css'
       ]
+    ],
+    ['/log-out',
+      '.tools\session\session-destroy.php',[
+        'app/app.css'
+      ]
     ]
   ];
   
@@ -65,6 +70,9 @@
   function routerView(){
     global $globalViews;
     foreach($globalViews as &$view){
+        Router::post($view,function($component){
+          include $component;
+        });
         Router::get($view,function($component){
           include $component;
         });

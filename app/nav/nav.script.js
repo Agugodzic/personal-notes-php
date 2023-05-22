@@ -22,13 +22,11 @@ function switchUserMenu(e){
 };
 
 function cerrarSesion(){
-  window.location.href="/login"
+  window.location.href="/log-out";
 };
-
 
 let buttonUserMenu = document.getElementById("nav-log-button").addEventListener("click", switchUserMenu, false);
 let buttonSideMenu = document.getElementById("nav-side-button").addEventListener("click", switchMenu, false);
-
 
 document.addEventListener("click", function(e){
   var sideClick = e.target;

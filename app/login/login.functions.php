@@ -28,9 +28,9 @@ function showMsj(){
   }
 };
 
-if(!empty($_GET['submit']) && !empty($_GET['user']) && !empty($_GET['password'])){
-  $user = $_GET['user'];
-  $password = $_GET['password'];
+if(!empty($_POST['submit']) && !empty($_POST['user']) && !empty($_POST['password'])){
+  $user = $_POST['user'];
+  $password = $_POST['password'];
   $userData = getUser($user,$password);
   $userId;
   

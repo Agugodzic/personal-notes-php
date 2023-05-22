@@ -3,7 +3,7 @@ include 'app/note-miniature/note-miniature.php';
 require_once('app/notification/notification.php');
 require_once('app/.data/entities/note.entity.php');
 require_once('app/.data/data-services/note.service.php');
-require_once("app\.data\data-services\user.service.php");
+require_once("app/.data/data-services/user.service.php");
 require_once('app/.data/entities/user.entity.php');
 
 use userEntity\User;

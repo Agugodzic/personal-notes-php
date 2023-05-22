@@ -31,7 +31,7 @@ class Router{
     self::$routes['GET'][$route]['uri'] = $route;
   }
 
-  public static function post($uri,$callback) {
+  public static function post($view,$callback) {
     $route = $view[0];
     $component = $view[1];
 
@@ -44,7 +44,7 @@ class Router{
     $cleanUri = route_uriForLevel($level); #router.functions.php
     $method = $_SERVER['REQUEST_METHOD'];
 
-    foreach(self::$routes[$method] as $route){
+    foreach(self::$routes['POST'] as $route){
       //echo'<p>Uri:'.$uri.' ||  Route:'.$route['uri'].'</p>';
       if($route['uri'] == $cleanUri ){
         $callback = $route['function'];
@@ -52,7 +52,6 @@ class Router{
         return;
       }
     };
-    
     include '.error-pages/404-error.php';
   }
 }

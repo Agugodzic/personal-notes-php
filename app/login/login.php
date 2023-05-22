@@ -5,7 +5,7 @@
 
   <div id="login-window">
     <div id="login-form-container">
-      <form method="get" action="" id="login-form">
+      <form method="post" action="" id="login-form">
         <h2 id="login-form-title">Log in</h2>
         <span>Usuario:</span> 
         <input name="user" value="<?= $user ?>" type="text"></input>

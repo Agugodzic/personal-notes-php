@@ -4,6 +4,7 @@
   <div id="register-window">
     <div id="register-form-container">
       <form method="get" action="" id="login-form">
+        
       <h2 id="register-form-title">Registrar usuario:</h2>
         <span class="register-span">Usuario:</span> 
         <input class="register-input" name="user" value="<?= $user ?>" type="text"></input>

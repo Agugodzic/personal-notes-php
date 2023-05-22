@@ -4,9 +4,9 @@ function themeIcon(){
 
   if(isset($_SESSION['theme'])){
     if($_SESSION['theme'] == 'dark'){
-      $themeIconUrl = "https://uxwing.com/wp-content/themes/uxwing/download/nature-and-environment/moon-icon.png";
+      $themeIconUrl = ".files/moon-dark.png";
     }else{
-      $themeIconUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgZiGEtOiPTTrnIAqiofFzbuK-C3PFRwV-qw&usqp=CAU";
+      $themeIconUrl = ".files/sun.png";
     };
   };
 

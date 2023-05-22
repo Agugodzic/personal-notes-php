@@ -29,7 +29,7 @@
         <div class="config-page-panel">
 
           <p <?=theme_class("config-user-element")?> >
-            <form class="config-user-form">
+            <form method="post" class="config-user-form">
               <span class="config-user-element-name">Nombre de usuario:</span> 
               <input <?=theme_class("config-user-input")?> type="text" value="<?=$username?>" name="username"></input>
               <button <?=theme_class("config-user-form-button")?>>Guardar</button>
@@ -37,7 +37,7 @@
           </p>
 
           <p <?=theme_class("config-user-element")?> >
-            <form class="config-user-form">
+            <form method="post" class="config-user-form">
               <span class="config-user-element-name">Email:</span> 
               <input <?=theme_class("config-user-input")?> type="text" value="<?=$email?>" name="email"></input>
               <button <?=theme_class("config-user-form-button")?>>Guardar</button>
@@ -45,9 +45,10 @@
           </p>
 
           <p <?=theme_class("config-user-element")?> >
-            <form class="config-user-form">
+            <form method="post" class="config-user-form">
               <span class="config-user-element-name">Contraseña:</span> 
               <input <?=theme_class("config-user-input")?> type="text" value="<?=$password?>" name="password"></input>
+              <button id="show-password-button"><img id="show-password-button-image" src=".files/eye-white.png"></button>
               <button <?=theme_class("config-user-form-button")?>>Guardar</button>
             </form>
           </p>
@@ -82,7 +83,7 @@
     };
 
     function saveBackground(){
-      location.href="/config?background="+backgroundId;
+      location.href="/config?background=" + backgroundId;
     }
 
     function changePage(page){
@@ -94,6 +95,7 @@
         userPage.style.display = "block";
       }
     }
+
     changePage("<?=$page?>");
 
   </script>

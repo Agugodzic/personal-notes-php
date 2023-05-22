@@ -163,7 +163,21 @@
     opacity: 65%;
   }
 
+#show-password-button{
+  background-color:transparent;
+  border:none;
+  display: inline;
+  position:absolute;
+  width: 1px;
+  max-width: 1px;
+  height: 10px;
+  transform: translateX(-45px);
+}
 
+#show-password-button-image{
+  height: 20px;
+  bottom:1px;
+}
 
 #selector-none-container{
   height: 70px;

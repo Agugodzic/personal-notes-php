@@ -8,6 +8,15 @@ $password = "";
 $passwordRepeat = "";
 $email = "";
 
+function userVerify($user_){
+  $get_user = getUserByUsername($user_);
+  $isUsed = false;
+  while($obj = pg_fetch_object($get_user)){
+    $isUsed = true;
+  };
+  return !$isUsed;
+}
+
 function showMsj(){
   global $user;
   global $email;
@@ -20,14 +29,22 @@ function showMsj(){
       <p class="login-msj-text">debe completar los campos</p>
     </div>
     ';
+
   };
 
   if(!empty($_GET['submit']) && !empty($_GET['user']) && empty($_GET['password'])){
+    if(!userVerify($_GET['user'])){
+      echo '
+      <div class="login-msj">
+        <p class="login-msj-text">Usuario no disponible.</p>
+      </div>
+      ';
+    }else{
     echo '
     <div class="login-msj">
       <p class="login-msj-text">ingresa la contraseña</p>
     </div>
-    ';
+    ';}
   };
 
   if(!empty($_GET['submit']) && empty($_GET['user']) && !empty($_GET['password'])){
@@ -37,23 +54,20 @@ function showMsj(){
     </div>
     ';
   };
-
-  
-  if(!empty($_GET['submit']) && !empty($_GET['user']) && empty($_GET['password'])){
-    echo '
-    <div class="login-msj">
-      <p class="login-msj-text">ingresa la contraseña</p>
-    </div>
-    ';
-  };
-  
     
   if(!empty($_GET['submit']) && !empty($_GET['user']) && !empty($_GET['password']) && empty($_GET['email'])){
+    if(!userVerify($_GET['user'])){
+      echo '
+      <div class="login-msj">
+        <p class="login-msj-text">Usuario no disponible.</p>
+      </div>
+      ';
+    }else{
     echo '
     <div class="login-msj">
-      <p class="login-msj-text">ingresa un email</p>
+      <p class="login-msj-text">ingresa una cuenta de email</p>
     </div>
-    ';
+    ';}
   };  
 
   if(!empty($_GET['submit']) && !empty($_GET['user']) && !empty($_GET['password']) && !empty($_GET['email']) && empty($_GET['passwordrepeat'])){
@@ -70,11 +84,19 @@ function showMsj(){
     $password = $_GET['password'];
     $passwordRepeat = $_GET['passwordrepeat'];
 
-    $user = new User(null,$user,$email,$password,'default',0);
-    $newUser = addUser($user); #user.service.php
-    $userid=8;
-    $fila = pg_fetch_object($newUser);
-    echo '<script>location.href="/login"</script>';
+    if(userVerify($user)){
+      $user = new User(null,$user,$email,$password,'default',0);
+      $newUser = addUser($user); #user.service.php
+      $userid=8;
+      $fila = pg_fetch_object($newUser);
+      echo '<script>location.href="/login"</script>';
+    }else{
+      echo '
+        <div class="login-msj">
+          <p class="login-msj-text">Usuario no disponible.</p>
+        </div>
+      ';
+    };
   };  
 };
 

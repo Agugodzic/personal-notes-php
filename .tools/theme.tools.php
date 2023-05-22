@@ -1,7 +1,6 @@
 <?php
 //$_SESSION['theme'] = "dark";
 
-
 function theme_selector($selector){
   if(isset($_SESSION['theme'])){
     if($_SESSION['theme']=='default'){
