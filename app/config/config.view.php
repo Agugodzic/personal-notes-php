@@ -2,7 +2,8 @@
 
 <div <?=theme_class('config-container')?>>
 
-  <img <?=theme_id("background-preview")?> src=<?= $previewBackground?>>
+  <img id="background-preview" src=<?= $previewBackground?>>
+  <div <?=theme_class("background-preview-none")?>></div>
 
   <div <?=theme_class('config-window-container')?>> 
     <div id='config-window-buttons'>
@@ -87,9 +88,16 @@
 
     function selectBackground(id,url){
       let background = document.getElementById("background-preview");
-      backgroundId = id;
-      background.src=url;
-      background.style.zIndex = 1000;
+
+      if(url.length > 1){
+        background.style.visibility="visible";
+        backgroundId = id;
+        background.src=url;
+        background.style.zIndex = 1000;
+      }else{
+        background.style.visibility="hidden";
+        backgroundId = id;
+      }
     };
 
     function saveBackground(){

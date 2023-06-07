@@ -1,7 +1,6 @@
 <?php
   function db_connect(){
     include '.environments/dbConfig.php';
-    
     /*
     $conection = new PDO("'pgsql:".
       "host=".$DB_HOST."; ".
@@ -13,15 +12,21 @@
         "Error al conectar: ".pg_last_error() 
       );
     return $connection;
-*/
 
-  $connection = pg_connect(
-      "host=".$DB_HOST." ".
-      "dbname=".$DB_NAME." ".
-      "user=".$DB_USERNAME." ".
-      "password=".$DB_PASSWORD." "
-      )or die( 
-        "Error al conectar: ".pg_last_error() 
+
+$connection = pg_connect(
+  "host=".$DB_HOST." ".
+  "dbname=".$DB_NAME." ".
+  "user=".$DB_USERNAME." ".
+  "password=".$DB_PASSWORD." "
+  )or die( 
+    "Error al conectar: ".pg_connect_error()
+  );
+return $connection;
+};*/
+
+  $connection = mysqli_connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_NAME)or die( 
+        "Error al conectar: ".mysqli_connect_error()
       );
     return $connection;
   };
@@ -51,7 +56,7 @@
     };
 
     $sql = "INSERT INTO ".$tableName." (".$columns_sql.") VALUES (".$values_sql.")";
-    return pg_query(db_connect(),$sql);
+    return mysqli_query(db_connect(),$sql);
   };
 
   function db_updateWhere($tableName,$values,$condition){
@@ -70,7 +75,7 @@
     };
     $sql = "UPDATE ".$tableName." SET ".$updates." WHERE ". $condition;
     
-    return pg_query(db_connect(),$sql);
+    return mysqli_query(db_connect(),$sql);
   };
 
   function db_getColumnsWhere($table,$columns,$condition){
@@ -90,16 +95,16 @@
     };
 
     $sql = "SELECT (".$columns_sql.") FROM ". $tableName ." WHERE ". $condition;
-    return pg_query(db_connect(),$sql);/*6347724 */
+    return mysqli_query(db_connect(),$sql);/*6347724 */
   };
 
   function db_deleteWhere($tableName,$condition){
     $sql = "DELETE FROM ". $tableName ." WHERE ". $condition ;
-    return pg_query(db_connect(),$sql);
+    return mysqli_query(db_connect(),$sql);
   };
 
   function db_getWhere($tableName,$condition){
     $sql = "SELECT * FROM ". $tableName ." WHERE ". $condition;
-    return pg_query(db_connect(),$sql);
+    return mysqli_query(db_connect(),$sql);
   };
 

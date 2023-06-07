@@ -53,7 +53,7 @@
       ]
     ],
     ['/log-out',
-      '.tools\session\session-destroy.php',[
+      '.tools/session/session-destroy.php',[
         'app/app.css'
       ]
     ]
@@ -116,6 +116,28 @@
       case 'aplication':
         routerView();
         break;
+
+      case 'background':
+        include_once('app/.data/data-services/background.service.php');
+        $background =  get_background(); #background.service.php
+        if(isset($_GET["background"]) && route_uriForLevel(1) != '/login' && route_uriForLevel(1) != '/register'){
+          $backgroundId = $_GET["background"];
+
+          if($backgroundId != 0){
+            echo ' <img id="app-background" src='.$background[$backgroundId][0].'>';
+          };
+
+        }else if(isset($_SESSION['user_background']) && route_uriForLevel(1) != '/login' && route_uriForLevel(1) != '/register'){
+          $backgroundId = $_SESSION['user_background'];
+
+          if($backgroundId != 0){
+            echo ' <img id="app-background" src='.$background[$backgroundId][0].'>';
+          };
+
+        }else if( route_uriForLevel(1) == '/login' || route_uriForLevel(1) == '/register'){
+          echo ' <img id="app-background" src=".files\image7.jpg">';
+        }
+        break;
     };
   };
 
@@ -134,10 +156,12 @@
 
   unrestricted($unrestrictedUrls);
 
+  /*
+
   function background(){
     include_once('app\.data\data-services\background.service.php');
     $background =  get_background(); #background.service.php
-    if(isset($_GET["background"])){
+    if(isset($_GET["background"]) && route_uriForLevel(1) != '/login' && route_uriForLevel(1) != '/register'){
       $backgroundId = $_GET["background"];
       if($backgroundId != 0){
         return $background[$backgroundId][0];
@@ -151,8 +175,8 @@
       }else{
         return "";
       }
-    }else{
-      return "";
+    }else if( route_uriForLevel(1) == '/login' || route_uriForLevel(1) == '/register'){
+      return "'.files\image7.jpg'";
     }
-  }
+  }*/
 ?>

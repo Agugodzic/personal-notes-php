@@ -51,6 +51,8 @@
   margin:none;
   padding:none;
   overflow-x: hidden;
+  opacity: 100%;
+  box-sizing: border-box;
 }
 
 .red-button{
@@ -72,7 +74,6 @@
 #app-background{
   max-height: auto;
   min-width: auto;
-
   object-fit: cover;
 }
 }

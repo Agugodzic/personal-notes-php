@@ -1,9 +1,10 @@
-<?php include_once('app\nav\nav.control.php') ?>
-<?php include_once('app\app.module.php') ?>
+<?php include_once('app/nav/nav.control.php') ?>
+<?php include_once('app/app.module.php') ?>
+<?php require_once('.tools/adapters/db.adapter.php') ?>
 
 <div <?= theme_class("app-container")?> >
-  <img id="app-background" src=<?=background()?> >
 
+  <?php injectedModule('background')?>
   <?php injectedModule('aplication')?>
   
 </div>

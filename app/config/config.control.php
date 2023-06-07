@@ -1,6 +1,6 @@
 <?php
 include_once('app/nav/nav.view.php');
-include_once('app\.data\data-services\user.service.php');
+include_once('app/.data/data-services/user.service.php');
 
 $page = "aspect";
 $previewBackground = "";
@@ -16,7 +16,7 @@ $showPasswordImage = ".files/eye-white.png";
 $showPasswordFunction = "showPassword()";
 $showPasswordType ="password";
 
-while($obj = pg_fetch_object($userData)){
+while($obj = db_fetch_adapter($userData)){
   $pw = $obj->password;
 };
 

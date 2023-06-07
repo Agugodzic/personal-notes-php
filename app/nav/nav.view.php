@@ -1,4 +1,4 @@
-<?php include_once('app\nav\nav.control.php') ?>
+<?php include_once('app/nav/nav.control.php') ?>
 
 <div <?=theme_class("nav-container")?> >
   <div id="nav-menu">

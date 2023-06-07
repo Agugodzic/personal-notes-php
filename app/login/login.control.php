@@ -1,7 +1,8 @@
 <?php
 require_once('app/notification/notification.php');
-require_once("app\.data\data-services\user.service.php");
+require_once("app/.data/data-services/user.service.php");
 require_once('app/.data/entities/user.entity.php');
+
 use userEntity\User;
 
 $user = "";
@@ -34,7 +35,7 @@ if(!empty($_POST['submit']) && !empty($_POST['user']) && !empty($_POST['password
   $userData = getUser($user,$password);
   $userId;
   
-  while($obj = pg_fetch_object($userData)){
+  while($obj = db_fetch_adapter($userData)){
     $users[] = new User($obj->userid,$obj->username,$obj->email,$obj->password,$obj->theme,$obj->background);
     $userId = $obj->userid;
     $userName = $obj->username;
@@ -45,7 +46,6 @@ if(!empty($_POST['submit']) && !empty($_POST['user']) && !empty($_POST['password
   
   if(empty($userId)){
     echo '
-    <p class="login-msj-text">Usuario o contraseña incorrectos</p>
     <script>window.location.href ="login?notification=0";</script>
     ';
   }else{

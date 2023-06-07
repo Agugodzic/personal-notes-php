@@ -1,17 +1,20 @@
 <?php
-require_once("app\.data\data-services\user.service.php");
+require_once("app/.data/data-services/user.service.php");
 require_once('app/.data/entities/user.entity.php');
+
+
 use userEntity\User;
 
 $user = "";
 $password = "";
 $passwordRepeat = "";
 $email = "";
+$db_type = "mysql";
 
 function userVerify($user_){
   $get_user = getUserByUsername($user_);
   $isUsed = false;
-  while($obj = pg_fetch_object($get_user)){
+  while($obj = db_fetch_adapter($get_user)){
     $isUsed = true;
   };
   return !$isUsed;
@@ -88,7 +91,7 @@ function showMsj(){
       $user = new User(null,$user,$email,$password,'default',0);
       $newUser = addUser($user); #user.service.php
       $userid=8;
-      $fila = pg_fetch_object($newUser);
+      $fila = db_fetch_adapter($newUser);
       echo '<script>location.href="/login"</script>';
     }else{
       echo '

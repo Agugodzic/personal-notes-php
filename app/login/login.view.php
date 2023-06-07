@@ -1,7 +1,7 @@
 <?php include 'login.control.php' ?>
 
 <div id="login-container">
-<img id="login-background" src='.files\image7.jpg' >
+
 <div id="logo-container">
   <img id="logo-img" src=".files/logo.png">
   <span id="logo-text">Personal Notes</span>

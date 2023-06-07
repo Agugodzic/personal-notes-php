@@ -36,7 +36,7 @@
     $queryResp = db_getWhere('notes', "userid = ". $userid); #dbFunctions.php
     $noteList = [];
 
-    while($obj = pg_fetch_object($queryResp)){
+    while($obj = db_fetch_adapter($queryResp)){
       $noteList[] = new Note($obj->noteid,$obj->userid,$obj->text,$obj->color);
     };
     return $noteList;
